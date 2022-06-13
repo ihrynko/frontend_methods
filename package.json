@@ -11,11 +11,15 @@
     "type": "git",
     "url": "git+https://github.com/ihrynko/frontend_methods.git"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ihrynko/frontend_methods/issues"
   },
-  "homepage": "https://github.com/ihrynko/frontend_methods#readme"
+  "homepage": "https://github.com/ihrynko/frontend_methods#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.6"
+  }
 }

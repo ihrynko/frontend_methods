@@ -1,3 +1,5 @@
+import fetch from "node-fetch";
+
 const isSuccess = true;
 
 const promise = new Promise((resolve, reject) => {
@@ -43,16 +45,21 @@ Promise.race([promise1, promise2])
   .then((value) => console.log(value)) // "promiseA value"
   .catch((error) => console.log(error));
 
-//Promise.resolve(), Promise.reject();
+// async/await
 
-const makeGreeting = (guestName) => {
-  if (guestName === "" || guestName === undefined) {
-    return Promise.reject("Guest name must not be empty");
-  }
-
-  Promise.resolve(`Welcome ${guestName}`);
+const fetchUsers = async () => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const users = await response.json();
+  return users;
 };
 
-makeGreeting("Alex")
-  .then((greeting) => console.log(greeting))
-  .catch((error) => console.error(error));
+const doStuff = async () => {
+  try {
+    const users = await fetchUsers();
+    console.log(users);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+doStuff();
