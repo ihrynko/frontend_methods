@@ -105,10 +105,10 @@ fruits.indexOf("mango"); // -1
 
 function updateFruits(fruits, fruit) {
   if (fruits.indexOf(fruit) === -1) {
-    fruits.push(veggie);
-    console.log(`New veggies collection is : ${fruits}`);
+    fruits.push(fruit);
+    console.log(`New fruits collection is : ${fruits}`);
   } else {
-    console.log(`${fruit} is already exists in the veggies collection.`);
+    console.log(`${fruit} is already exists in the fruits collection.`);
   }
 }
 
@@ -133,8 +133,8 @@ fruits.lastIndexOf("mango"); // -1
 //Array.prototype.map()
 students.map((element, index, array) => element.courses);
 // [['math', 'physics'], ["informatics", "math"], ["physics", "biology"]]
-const names = students.map((student) => student.name); // [ 'Alex', 'Bob', 'Tom' ]
-const namesInUpperCase = names.map((name) => name.toUpperCase()); // [ 'ALEX', 'BOB', 'TOM' ]
+const names = students.map((student) => student.name); // [ 'Alex','Tom', 'Bob' ]
+const namesInUpperCase = names.map((name) => name.toUpperCase()); // [ 'ALEX','TOM', 'BOB', ]
 
 //Array.of()
 Array.of("apple"); // ['apple']
